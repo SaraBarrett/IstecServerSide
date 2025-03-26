@@ -1,13 +1,13 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/hello', function () {
-    return view('welcome');
-})->name('world.welcome');
+Route::get('/hello', [HomeController::class, 'hello'] )->name('world.welcome');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::get('/hello_mundo', function(){
     return '<h5>Hello mundo !!</h5>';
@@ -18,9 +18,7 @@ Route::get('/world_hello/{name}', function($name){
 });
 
 
-Route::get('/home', function () {
-    return view('home');
-})->name('home');
+
 
 
 //criar uma rota onde no futuro vão aparecer todos os utilizadores
