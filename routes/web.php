@@ -20,7 +20,7 @@ Route::get('/world_hello/{name}', function($name){
 
 Route::get('/home', function () {
     return view('home');
-});
+})->name('home');
 
 
 //criar uma rota onde no futuro vão aparecer todos os utilizadores
@@ -31,3 +31,7 @@ Route::get('/admin-utilizadores', function(){
 Route::get('/add-utilizadores', function(){
     return view('users.add_users');
 })->name('users.add');
+
+Route::fallback(function(){
+    return view('fallback');
+});
