@@ -9,12 +9,7 @@
 </head>
 
 <body>
-    <h4>Olá, estás em casa.</h4>
-    <ul>
-        <li><a href="{{ route('world.hello') }}">Hello</a></li>
-        <li><a href="{{ route('world.welcome') }}">Welcome</a></li>
-        <li><a href="{{route('users.all')}}">Todos os Utilizadores</a></li>
-    </ul>
+    <h5>Olá, aqui terás uma lista de todos os utilizadores</h5>
 </body>
 
 </html>
