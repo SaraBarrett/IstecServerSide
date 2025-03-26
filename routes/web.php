@@ -27,3 +27,7 @@ Route::get('/home', function () {
 Route::get('/admin-utilizadores', function(){
     return view('users.all_users');
 })->name('users.all');
+
+Route::get('/add-utilizadores', function(){
+    return view('users.add_users');
+})->name('users.add');
