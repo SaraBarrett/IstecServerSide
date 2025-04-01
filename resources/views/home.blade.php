@@ -9,17 +9,10 @@
     <title>Document</title>
 </head>
 
-@php
-    $helloworld = 'hello mundo';
-@endphp
 
 <body>
     <p>{{ $helloworld }}</p>
-    @if (isset($myFirstVar))
-        <p>{{ $myFirstVar }}</p>
-    @else
-        <p>não tem nada definido</p>
-    @endif
+
 
     <h4>Olá, estás em casa.</h4>
     <ul>

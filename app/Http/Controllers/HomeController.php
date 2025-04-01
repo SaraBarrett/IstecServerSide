@@ -8,8 +8,12 @@ class HomeController extends Controller
 {
     //aqui vamos colocar todas as funções que precisarmos
     public function index() {
-        return view('home');
+
+        $helloworld = 'hello mundo';
+  
+        return view('home', compact('helloworld'));
     }
+
 
     public function hello() {
         return view('welcome');
