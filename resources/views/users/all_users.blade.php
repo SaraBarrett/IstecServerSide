@@ -9,7 +9,12 @@
 </head>
 
 <body>
-    <h5>Olá, aqui terás uma lista de todos os utilizadores</h5>
+    <h5>Informação de Contacto:</h5>
+    <ul>
+        <li>{{$contactInfo['name']}}</li>
+        <li>{{$contactInfo['phone']}}</li>
+    </ul>
+    <h5>Olá {{$myName}}, aqui terás uma lista de todos os utilizadores</h5>
 </body>
 
 </html>

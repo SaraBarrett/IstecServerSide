@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
 Route::get('/hello', [HomeController::class, 'hello'] )->name('world.welcome');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 //criar uma rota onde no futuro vão aparecer todos os utilizadores

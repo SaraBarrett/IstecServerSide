@@ -10,8 +10,13 @@ class HomeController extends Controller
     public function index() {
 
         $helloworld = 'hello mundo';
-  
-        return view('home', compact('helloworld'));
+        $istecInfo= [
+            'name' => 'Istec',
+            'address' => 'Rua do Istec',
+            'email' => 'Istec@gmail.com'
+        ];
+
+        return view('home', compact('helloworld', 'istecInfo'));
     }
 
 

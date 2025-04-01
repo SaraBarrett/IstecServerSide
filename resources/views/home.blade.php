@@ -12,6 +12,8 @@
 
 <body>
     <p>{{ $helloworld }}</p>
+    <h5>Dados de Contacto</h5>
+    <p>{{ $istecInfo['name'] }}: {{ $istecInfo['address'] }}, {{ $istecInfo['email'] }}</p>
 
 
     <h4>Olá, estás em casa.</h4>
