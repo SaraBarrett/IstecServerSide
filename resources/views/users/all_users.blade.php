@@ -21,6 +21,15 @@
         @endforeach
 
     </ul>
+
+    <h6>Dados vindos da BD</h6>
+    <ul>
+        @foreach ($usersFromDB as $user)
+            <li>{{ $user->name }} : {{ $user->email }}</li>
+        @endforeach
+    </ul>
+
+    {{$myContact->name}}
 </body>
 
 </html>

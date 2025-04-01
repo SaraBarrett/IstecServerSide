@@ -15,4 +15,5 @@ class TaskController extends Controller
 
         return view('tasks.all_tasks', compact('tasks'));
     }
+
 }

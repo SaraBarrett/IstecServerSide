@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -19,7 +20,18 @@ class UserController extends Controller
             ['id' => 3, 'name' => 'Chico', 'phone' => 914444444],
         ];
 
-        return view('users.all_users', compact('myName', 'contactInfo', 'contactsArr'));
+        //query para quando queremos ir buscar um conjunto de linhas
+        $usersFromDB =
+        DB::table('users')
+        ->get();
+        //dd($usersFromDB);
+
+         //query para quando queremos ir buscar um único objecto
+        $myContact = db::table('users')
+        ->where('id', 1)
+        ->first();
+
+        return view('users.all_users', compact('myName', 'contactInfo', 'contactsArr','usersFromDB', 'myContact'));
     }
 
     public function addUser(){
