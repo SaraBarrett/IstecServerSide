@@ -11,10 +11,16 @@
 <body>
     <h5>Informação de Contacto:</h5>
     <ul>
-        <li>{{$contactInfo['name']}}</li>
-        <li>{{$contactInfo['phone']}}</li>
+        <li>{{ $contactInfo['name'] }}</li>
+        <li>{{ $contactInfo['phone'] }}</li>
     </ul>
-    <h5>Olá {{$myName}}, aqui terás uma lista de todos os utilizadores</h5>
+    <h5>Olá {{ $myName }}, aqui terás uma lista de todos os utilizadores</h5>
+    <ul>
+        @foreach ($contactsArr as $contact)
+            <li>{{ $contact['id'] }}: {{ $contact['name'] }} - {{ $contact['phone'] }} </li>
+        @endforeach
+
+    </ul>
 </body>
 
 </html>

@@ -22,6 +22,7 @@
         <li><a href="{{ route('world.welcome') }}">Welcome</a></li>
         <li><a href="{{ route('users.all') }}">Todos os Utilizadores</a></li>
         <li><a href="{{ route('users.add') }}">Adicionar Utilizadores</a></li>
+        <li><a href="{{ route('tasks.all') }}">Tarefas</a></li>
     </ul>
 </body>
 

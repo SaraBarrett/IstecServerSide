@@ -13,7 +13,13 @@ class UserController extends Controller
             'phone' => 914377777
         ];
 
-        return view('users.all_users', compact('myName', 'contactInfo'));
+        $contactsArr = [
+            ['id' => 1, 'name' => 'Hugo', 'phone' => 914444444],
+            ['id' => 2, 'name' => 'Osório', 'phone' => 914444444],
+            ['id' => 3, 'name' => 'Chico', 'phone' => 914444444],
+        ];
+
+        return view('users.all_users', compact('myName', 'contactInfo', 'contactsArr'));
     }
 
     public function addUser(){
