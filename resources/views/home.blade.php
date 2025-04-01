@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.fe_master')
 
-<head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-
-
-<body>
+@section('content')
+    <img src="{{asset('images/what-is-software-CA-Capterra-Header.png
+    ')}}" alt="">
     <p>{{ $helloworld }}</p>
     <h5>Dados de Contacto</h5>
     <p>{{ $istecInfo['name'] }}: {{ $istecInfo['address'] }}, {{ $istecInfo['email'] }}</p>
@@ -24,6 +16,4 @@
         <li><a href="{{ route('users.add') }}">Adicionar Utilizadores</a></li>
         <li><a href="{{ route('tasks.all') }}">Tarefas</a></li>
     </ul>
-</body>
-
-</html>
+@endsection
