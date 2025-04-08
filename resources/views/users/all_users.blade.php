@@ -1,5 +1,11 @@
 @extends('layouts.fe_master')
 @section('content')
+    @if (session('message'))
+    <div class="alert alert-warning">
+        {{session('message')}}
+    </div>
+    @endif
+
     <h5>Informação de Contacto:</h5>
     <ul>
         <li>{{ $contactInfo['name'] }}</li>
