@@ -38,6 +38,12 @@ class UserController extends Controller
     }
 
     public function showUser($id){
-        return view('users.show_user');
+
+        $ourUser = DB::table('users')
+                    ->where('id', $id)
+                    ->first();
+
+
+        return view('users.show_user', compact('ourUser'));
     }
 }

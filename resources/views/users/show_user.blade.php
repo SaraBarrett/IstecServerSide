@@ -1,9 +1,9 @@
 @extends('layouts.fe_master')
 @section('content')
-    <h5>Dados do User</h5>
-    <p>Nome:</p>
-    <p>Morada:</p>
-    <p>Nif:</p>
-    <p>Email:</p>
-    <p>Password:</p>
+    <h5>Dados do User: {{ $ourUser->name }}</h5>
+    <p>Nome: {{ $ourUser->name }}</p>
+    <p>Morada:{{ $ourUser->address }}</p>
+    <p>Nif:{{ $ourUser->nif }}</p>
+    <p>Email:{{ $ourUser->email }}</p>
+    <p>Password:{{ $ourUser->password }}</p>
 @endsection
