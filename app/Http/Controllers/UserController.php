@@ -46,4 +46,16 @@ class UserController extends Controller
 
         return view('users.show_user', compact('ourUser'));
     }
+
+    public function deleteUser($id){
+        DB::table('tasks')
+        ->where('user_id', $id)
+        ->delete();
+
+        Db::table('users')
+        ->where('id', $id)
+        ->delete();
+
+        return back();
+    }
 }

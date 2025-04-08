@@ -39,7 +39,7 @@
                     <td>{{ $user->email }}</td>
                     <td>{{ $user->address }}</td>
                     <td><a href="{{route('user.show', $user->id)}}" class="btn btn-info">Ver</a></td>
-                    <td><a href="" class="btn btn-danger">Apagar</a></td>
+                    <td><a href="{{route('user.delete', $user->id)}}" class="btn btn-danger">Apagar</a></td>
                 </tr>
             @endforeach
         </tbody>

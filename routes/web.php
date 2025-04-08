@@ -18,6 +18,8 @@ Route::get('/admin-utilizadores', [UserController::class, 'allUsers'])->name('us
 Route::get('/add-utilizadores', [UserController::class, 'addUser'])->name('users.add');
 //rota com parametro que, ao clicar, mostra uma blade/view com os dados do user
 Route::get('/show-user/{id}', [UserController::class, 'showUser'])->name('user.show');
+Route::get('/delete-user/{id}', [UserController::class, 'deleteUser'])->name('user.delete');
+
 
 //rotas para tarefas
 Route::get('/tasks', [TaskController::class, 'index'])->name('tasks.all');
