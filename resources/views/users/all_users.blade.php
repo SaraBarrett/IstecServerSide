@@ -24,30 +24,20 @@
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Email</th>
+                <th scope="col">Morada</th>
             </tr>
         </thead>
         <tbody>
+            @foreach ($usersFromDB as $user)
             <tr>
-                <th scope="row">1</th>
+                <th scope="row">{{$user->id}}</th>
                 <td>Mark</td>
                 <td>Otto</td>
                 <td>@mdo</td>
             </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>John</td>
-                <td>Doe</td>
-                <td>@social</td>
-            </tr>
+            @endforeach
         </tbody>
     </table>
 
