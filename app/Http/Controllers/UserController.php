@@ -51,11 +51,21 @@ class UserController extends Controller
         DB::table('tasks')
         ->where('user_id', $id)
         ->delete();
- 
+
         Db::table('users')
         ->where('id', $id)
         ->delete();
 
         return back();
+    }
+
+    public function storeUser(Request $request){
+        $request->validate([
+            'name' => 'required|max:50',
+            'email' =>'required|unique:users|email|max:25',
+            'password' => 'required|min:8'
+        ]);
+
+        
     }
 }

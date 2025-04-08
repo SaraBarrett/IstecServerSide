@@ -15,10 +15,13 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 //criar uma rota onde no futuro vão aparecer todos os utilizadores
 Route::get('/admin-utilizadores', [UserController::class, 'allUsers'])->name('users.all');
+//rota que mostra o formulário para inserir users
 Route::get('/add-utilizadores', [UserController::class, 'addUser'])->name('users.add');
 //rota com parametro que, ao clicar, mostra uma blade/view com os dados do user
 Route::get('/show-user/{id}', [UserController::class, 'showUser'])->name('user.show');
 Route::get('/delete-user/{id}', [UserController::class, 'deleteUser'])->name('user.delete');
+//rota de post que pega nos dados do formulário e os envia para dentro do código
+Route::post('/create-user',[UserController::class, 'storeUser'])->name('user.store');
 
 
 //rotas para tarefas
