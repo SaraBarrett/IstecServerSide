@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -65,6 +66,14 @@ class UserController extends Controller
             'email' =>'required|unique:users|email|max:25',
             'password' => 'required|min:8'
         ]);
+
+        User::insert([
+            'name' => $request->name,
+            'email' =>$request->email,
+            'password' => Hash::make($request->password)
+        ]);
+
+        return redirect()->route('users.all');
 
     }
 }
