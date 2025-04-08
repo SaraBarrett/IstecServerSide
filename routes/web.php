@@ -11,9 +11,13 @@ Route::get('/', function () {
 
 Route::get('/hello', [HomeController::class, 'hello'] )->name('world.welcome');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+
 //criar uma rota onde no futuro vão aparecer todos os utilizadores
 Route::get('/admin-utilizadores', [UserController::class, 'allUsers'])->name('users.all');
 Route::get('/add-utilizadores', [UserController::class, 'addUser'])->name('users.add');
+//rota com parametro que, ao clicar, mostra uma blade/view com os dados do user
+Route::get('/show-user/{id}', [UserController::class, 'showUser'])->name('user.show');
 
 //rotas para tarefas
 Route::get('/tasks', [TaskController::class, 'index'])->name('tasks.all');

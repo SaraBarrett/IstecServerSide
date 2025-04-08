@@ -36,4 +36,8 @@ class UserController extends Controller
     public function addUser(){
         return view('users.add_users');
     }
+
+    public function showUser($id){
+        return view('users.show_user');
+    }
 }

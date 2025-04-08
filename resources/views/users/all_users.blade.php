@@ -27,6 +27,8 @@
                 <th scope="col">Nome</th>
                 <th scope="col">Email</th>
                 <th scope="col">Morada</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
@@ -36,6 +38,8 @@
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->email }}</td>
                     <td>{{ $user->address }}</td>
+                    <td><a href="{{route('user.show', $user->id)}}" class="btn btn-info">Ver</a></td>
+                    <td><a href="" class="btn btn-danger">Apagar</a></td>
                 </tr>
             @endforeach
         </tbody>
