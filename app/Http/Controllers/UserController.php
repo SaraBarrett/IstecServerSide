@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -22,8 +23,7 @@ class UserController extends Controller
 
         //query para quando queremos ir buscar um conjunto de linhas
         $usersFromDB =
-        DB::table('users')
-        ->get();
+        User::get();
 
          //query para quando queremos ir buscar um único objecto
         $myContact = db::table('users')

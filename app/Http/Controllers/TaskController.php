@@ -17,7 +17,7 @@ class TaskController extends Controller
             ];
 
         //dados que vêm da Base de Dados
-        $tasksFromDB = DB::table('tasks')
+      $tasksFromDB = DB::table('tasks')
         ->join('users', 'users.id', '=', 'tasks.user_id')
         ->select('tasks.*', 'users.name as username')
         ->get();
