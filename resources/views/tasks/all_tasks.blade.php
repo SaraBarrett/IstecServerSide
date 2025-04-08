@@ -19,7 +19,7 @@
     <h6>Tasks vindas da Base de Dados</h6>
     <ul>
         @foreach ($tasksFromDB as $task)
-            <li>{{ $task->id }}: {{ $task->name }} - {{ $task->user_id }}</li>
+            <li>{{ $task->id }}: {{ $task->name }} - {{ $task->username }}</li>
         @endforeach
     </ul>
 
