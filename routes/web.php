@@ -23,6 +23,8 @@ Route::get('/delete-user/{id}', [UserController::class, 'deleteUser'])->name('us
 
 //rotas para tarefas
 Route::get('/tasks', [TaskController::class, 'index'])->name('tasks.all');
+Route::get('/show_task/{id}', [TaskController::class, 'showTask'])->name('tasks.show');
+Route::get('/delete_task/{id}', [TaskController::class, 'deleteTask'])->name('tasks.delete');
 
 Route::get('/hello_mundo', function(){
     return '<h5>Hello mundo !!</h5>';

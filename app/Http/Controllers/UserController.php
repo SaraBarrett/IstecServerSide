@@ -51,7 +51,7 @@ class UserController extends Controller
         DB::table('tasks')
         ->where('user_id', $id)
         ->delete();
-
+ 
         Db::table('users')
         ->where('id', $id)
         ->delete();
