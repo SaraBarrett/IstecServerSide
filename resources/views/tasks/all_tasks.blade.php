@@ -13,8 +13,15 @@
     <ul>
         @foreach ($tasks as $task)
             <li>{{ $task['name'] }}: {{ $task['user'] }} - {{ $task['prazo'] }}</li>
+        @endforeach
     </ul>
-    @endforeach
+
+    <h6>Tasks vindas da Base de Dados</h6>
+    <ul>
+        @foreach ($tasksFromDB as $task)
+            <li>{{ $task->id }}: {{ $task->name }} - {{ $task->user_id }}</li>
+        @endforeach
+    </ul>
 
 </body>
 

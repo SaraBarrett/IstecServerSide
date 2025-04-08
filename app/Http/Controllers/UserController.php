@@ -24,7 +24,6 @@ class UserController extends Controller
         $usersFromDB =
         DB::table('users')
         ->get();
-        //dd($usersFromDB);
 
          //query para quando queremos ir buscar um único objecto
         $myContact = db::table('users')
