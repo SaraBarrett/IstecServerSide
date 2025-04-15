@@ -14,7 +14,9 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 
 //criar uma rota onde no futuro vão aparecer todos os utilizadores
-Route::get('/admin-utilizadores', [UserController::class, 'allUsers'])->name('users.all');
+Route::get('/admin-utilizadores', [UserController::class, 'allUsers'])->name('users.all')->middleware('auth');
+
+
 //rota que mostra o formulário para inserir users
 Route::get('/add-utilizadores', [UserController::class, 'addUser'])->name('users.add');
 //rota com parametro que, ao clicar, mostra uma blade/view com os dados do user

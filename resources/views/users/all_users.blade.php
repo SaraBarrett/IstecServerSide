@@ -49,7 +49,11 @@
                     <td>{{ $user->email }}</td>
                     <td>{{ $user->address }}</td>
                     <td><a href="{{ route('user.show', $user->id) }}" class="btn btn-info">Ver</a></td>
-                    <td><a href="{{ route('user.delete', $user->id) }}" class="btn btn-danger">Apagar</a></td>
+                    @auth
+                        @if (Auth::user()->user_type == 1)
+                            <td><a href="{{ route('user.delete', $user->id) }}" class="btn btn-danger">Apagar</a></td>
+                        @endif
+                    @endauth
                 </tr>
             @endforeach
         </tbody>

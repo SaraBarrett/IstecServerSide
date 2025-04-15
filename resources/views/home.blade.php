@@ -1,9 +1,12 @@
 @extends('layouts.fe_master')
 
 @section('content')
-    <img src="{{asset('images/what-is-software-CA-Capterra-Header.png
-    ')}}" alt="">
-    <p>{{ $helloworld }}</p>
+    <img src="{{ asset('images/what-is-software-CA-Capterra-Header.png
+        ') }}" alt="">
+        @auth
+        <p>Olá {{ Auth::user()->name }}</p>
+        @endauth
+
     <h5>Dados de Contacto</h5>
     <p>{{ $istecInfo['name'] }}: {{ $istecInfo['address'] }}, {{ $istecInfo['email'] }}</p>
 
