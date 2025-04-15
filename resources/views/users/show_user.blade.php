@@ -1,8 +1,11 @@
 @extends('layouts.fe_master')
 @section('content')
     <h5>Dados do User: {{ $ourUser->name }}</h5>
-    <form method="POST" action="">
+    <form method="POST" action="{{route('user.update')}}">
         @csrf
+        @method('PUT')
+
+        <input type="hidden" name="id" value="{{ $ourUser->id }}" id="">
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Nome</label>
             <input required name="name" value="{{ $ourUser->name }}" type="text" class="form-control"

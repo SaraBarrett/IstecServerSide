@@ -1,9 +1,9 @@
 @extends('layouts.fe_master')
 @section('content')
     @if (session('message'))
-    <div class="alert alert-warning">
-        {{session('message')}}
-    </div>
+        <div class="alert alert-warning">
+            {{ session('message') }}
+        </div>
     @endif
 
     <h5>Informação de Contacto:</h5>
@@ -26,6 +26,10 @@
         @endforeach
     </ul>
 
+    <form action="">
+        <input type="text" name="search" id="" value="{{ request()->search }}">
+        <button class="btn btn-info">Procurar</button>
+    </form>
     <table class="table">
         <thead>
             <tr>
@@ -44,8 +48,8 @@
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->email }}</td>
                     <td>{{ $user->address }}</td>
-                    <td><a href="{{route('user.show', $user->id)}}" class="btn btn-info">Ver</a></td>
-                    <td><a href="{{route('user.delete', $user->id)}}" class="btn btn-danger">Apagar</a></td>
+                    <td><a href="{{ route('user.show', $user->id) }}" class="btn btn-info">Ver</a></td>
+                    <td><a href="{{ route('user.delete', $user->id) }}" class="btn btn-danger">Apagar</a></td>
                 </tr>
             @endforeach
         </tbody>

@@ -22,6 +22,7 @@ Route::get('/show-user/{id}', [UserController::class, 'showUser'])->name('user.s
 Route::get('/delete-user/{id}', [UserController::class, 'deleteUser'])->name('user.delete');
 //rota de post que pega nos dados do formulário e os envia para dentro do código
 Route::post('/create-user',[UserController::class, 'storeUser'])->name('user.store');
+Route::put('/update-user', [UserController::class, 'updateUser'])->name('user.update');
 
 
 //rotas para tarefas

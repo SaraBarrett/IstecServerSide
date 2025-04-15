@@ -23,8 +23,15 @@ class UserController extends Controller
         ];
 
         //query para quando queremos ir buscar um conjunto de linhas
-        $usersFromDB =
-        User::get();
+        $search =  request()->search;
+
+        $usersFromDB = DB::table('users');
+        if($search){
+            $usersFromDB =
+            $usersFromDB->where('name','LIKE', "%{$search}%")
+            ->orwhere('email','LIKE', "%{$search}%");
+        }
+        $usersFromDB =  $usersFromDB->get();
 
          //query para quando queremos ir buscar um único objecto
         $myContact = db::table('users')
@@ -75,5 +82,21 @@ class UserController extends Controller
 
         return redirect()->route('users.all')->with('message', 'User adicionado com sucesso!');
 
+    }
+
+    public function updateUser(Request $request){
+       $request->validate([
+        'name' => 'required'
+       ]);
+
+       DB::table('users')
+       ->where('id',  $request->id)
+       ->update([
+            'name' => $request->name,
+            'address' => $request->address,
+            'nif' => $request->nif,
+       ]);
+
+       return redirect()->route('users.all')->with('message', 'User actualizado com sucesso!');
     }
 }
