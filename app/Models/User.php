@@ -14,7 +14,7 @@ class User extends Authenticatable
 
     const TYPE_ADMIN = 1;
     const TYPE_TEACHER = 2;
-    const TYPE_USER = 3;
+    const TYPE_USER = 10;
 
     /**
      * The attributes that are mass assignable.
