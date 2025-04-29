@@ -28,9 +28,11 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('tasks.all') }}">Tasks</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
+                    @auth
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('dashboard.home') }}">Backoffice</a>
+                        </li>
+                    @endauth
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
@@ -52,7 +54,7 @@
                         class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal">
                         Dashboard
                     </a>
-                    <form method="POST" action="{{route('logout')}}">
+                    <form method="POST" action="{{ route('logout') }}">
                         @csrf
                         <button class="btn btn-warning" type="submit">Logout</button>
                     </form>

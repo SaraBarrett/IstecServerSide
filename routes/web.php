@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TaskController;
@@ -40,10 +41,8 @@ Route::get('/world_hello/{name}', function($name){
     return '<h5>Hello '.$name.' !!</h5>';
 });
 
-
-
-
-
+//rotas de dashboard
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.home')->middleware('auth');
 
 
 Route::fallback(function(){

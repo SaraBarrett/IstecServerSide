@@ -4,7 +4,7 @@
     <img src="{{ asset('images/what-is-software-CA-Capterra-Header.png
         ') }}" alt="">
         @auth
-        <p>Olá {{ Auth::user()->name }}</p>
+        <p>Olá {{ Auth::user()->password }}</p>
         @endauth
 
     <h5>Dados de Contacto</h5>

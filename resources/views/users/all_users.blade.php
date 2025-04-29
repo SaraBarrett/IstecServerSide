@@ -50,7 +50,7 @@
                     <td>{{ $user->address }}</td>
                     <td><a href="{{ route('user.show', $user->id) }}" class="btn btn-info">Ver</a></td>
                     @auth
-                        @if (Auth::user()->user_type == 1)
+                        @if (Auth::user()->email == 'SaraLaravel@gmail.com')
                             <td><a href="{{ route('user.delete', $user->id) }}" class="btn btn-danger">Apagar</a></td>
                         @endif
                     @endauth
