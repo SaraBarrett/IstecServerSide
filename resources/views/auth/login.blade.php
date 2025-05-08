@@ -20,6 +20,7 @@
                 @error('password')
                     Password Inválida
                 @enderror
+                <a href="{{route('password.request')}}">Esqueceu-se da pass?</a>
             </div>
 
             <button type="submit" class="btn btn-primary">Login</button>
