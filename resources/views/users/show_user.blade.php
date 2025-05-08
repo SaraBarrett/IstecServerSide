@@ -1,7 +1,7 @@
 @extends('layouts.fe_master')
 @section('content')
     <h5>Dados do User: {{ $ourUser->name }}</h5>
-    <form method="POST" action="{{route('user.update')}}">
+    <form method="POST" action="{{ route('user.update') }}" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 
@@ -21,12 +21,21 @@
             </div>
 
             <label for="exampleInputEmail1" class="form-label">Morada</label>
-            <input  name="address" value="{{ $ourUser->address }}" type="text" class="form-control"
+            <input name="address" value="{{ $ourUser->address }}" type="text" class="form-control"
                 id="exampleInputEmail1" aria-describedby="emailHelp">
 
             <label for="exampleInputEmail1" class="form-label">Nif</label>
-            <input  name="nif" value="{{ $ourUser->nif }}" type="text" class="form-control"
-                id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input name="nif" value="{{ $ourUser->nif }}" type="text" class="form-control" id="exampleInputEmail1"
+                aria-describedby="emailHelp">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Foto</label>
+                <input name="photo" type="file" accept="image/*" class="form-control" id="exampleInputEmail1"
+                    aria-describedby="emailHelp">
+            </div>
+            @error('photo')
+               o ficheiro que colocou não tem um formato válido
+            @enderror
+
             <button type="submit" class="btn btn-primary">Actualizar</button>
     </form>
 @endsection
